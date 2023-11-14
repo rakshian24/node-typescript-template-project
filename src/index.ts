@@ -15,7 +15,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.get('/api', (req, res) => {
-  res.status(200).json({ port: SERVER_PORT, env: NODE_ENV, dirName: __dirname, buildPath: path.resolve(__dirname, 'frontend', 'build') });
+  res.status(200).json({ serverPort: SERVER_PORT, env: NODE_ENV, dirName: __dirname, buildPath: path.resolve(__dirname, 'frontend', 'build') });
 });
 
 app.use(express.static(path.resolve(__dirname, 'frontend', 'build')));

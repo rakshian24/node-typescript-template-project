@@ -18,5 +18,8 @@
   },
   "exclude": [
     "src/frontend/*"
-  ]
+  ],
+  "ts-node": {
+    "esm": true,
+  }, 
 }
