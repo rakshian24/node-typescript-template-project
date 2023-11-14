@@ -9,7 +9,7 @@ const schema_1 = require("./schema/schema");
 const { SERVER_PORT, NODE_ENV } = process.env;
 const app = express();
 app.get('/api', (req, res) => {
-    res.status(200).json({ message: `Server is listening to port: ${SERVER_PORT}` });
+    res.status(200).json({ port: SERVER_PORT, env: NODE_ENV, dirName: __dirname, buildPath: path.resolve(__dirname, 'frontend', 'build') });
 });
 app.use(express.static(path.resolve(__dirname, 'frontend', 'build')));
 app.use("/graphql", (0, express_graphql_1.graphqlHTTP)({
