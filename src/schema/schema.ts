@@ -79,11 +79,23 @@ const OwnerType: GraphQLObjectType = new GraphQLObjectType({
 const RootQuery: GraphQLObjectType = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
+    todos: {
+      type: new GraphQLList(TodoType),
+      resolve(parent, args) {
+        return TODOS
+      }
+    },
     todo: {
       type: TodoType,
       args: { id: { type: GraphQLString } },
       resolve(parent, args) {
         return TODOS.filter(todo => todo.id === args.id)[0];
+      }
+    },
+    owners: {
+      type: new GraphQLList(OwnerType),
+      resolve(parent, args) {
+        return OWNERS
       }
     },
     owner: {
