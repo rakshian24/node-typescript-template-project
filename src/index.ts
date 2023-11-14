@@ -7,6 +7,11 @@ import schema from "./schema/schema";
 const { SERVER_PORT } = process.env;
 
 const app = express();
+
+app.get('/', (req, res) => {
+    res.status(200).json({ message: `Server is listening to port: ${SERVER_PORT}` });
+});
+
 app.use("/graphql", graphqlHTTP({
     schema,
     graphiql: true
