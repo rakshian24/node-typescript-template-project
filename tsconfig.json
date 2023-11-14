@@ -2,16 +2,19 @@
   "compilerOptions": {
     "target": "esnext",
     "lib": ["es6"],
-    "module": "commonjs",
+    "module": "NodeNext",
     "rootDir": "src",
     "outDir": "build",
-    "resolveJsonModule": true,
+    "resolveJsonModule": false,
+    "moduleResolution": "NodeNext",
     "allowJs": false,
     "esModuleInterop": false,
     "forceConsistentCasingInFileNames": true,
     "strict": true,                         
     "noImplicitAny": true,                  
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
   },
   "exclude": [
     "src/frontend/*"
