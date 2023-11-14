@@ -13,7 +13,7 @@ app.get('/api', (req, res) => {
   res.status(200).json({ message: `Server is listening to port: ${SERVER_PORT}` });
 });
 
-app.use(express.static(path.resolve(__dirname, './frontend/build')));
+app.use(express.static(path.resolve(__dirname, 'frontend/build')));
 
 app.use("/graphql", graphqlHTTP({
   schema,
@@ -22,7 +22,7 @@ app.use("/graphql", graphqlHTTP({
 
 if (NODE_ENV === 'production') {
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './frontend/build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'frontend/build', 'index.html'));
   });
 } else if (NODE_ENV === 'development') {
   app.get('/', (req, res) => {
