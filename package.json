@@ -2,9 +2,10 @@
   "name": "node-typescript-template",
   "version": "1.0.0",
   "description": "Node typescript template project",
-  "main": "index.js",
+  "main": "./src/index.ts",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "start": "ts-node ./src/index.ts"
   },
   "author": "rakshithrao123@gmail.com",
   "license": "ISC",
