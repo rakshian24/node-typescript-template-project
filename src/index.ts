@@ -25,15 +25,15 @@ app.use("/graphql", graphqlHTTP({
   graphiql: true
 }));
 
-if (NODE_ENV === 'production') {
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-  });
-} else if (NODE_ENV === 'development') {
-  app.get('/', (req, res) => {
-    res.status(200).json({ message: 'Server is running!' });
-  });
-}
+// if (NODE_ENV === 'production') {
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+//   });
+// } else if (NODE_ENV === 'development') {
+//   app.get('/', (req, res) => {
+//     res.status(200).json({ message: 'Server is running!' });
+//   });
+// }
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server is listening to port: ${SERVER_PORT}`)
